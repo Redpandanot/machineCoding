@@ -1,0 +1,19 @@
+.container {
+  height: 500px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.star {
+  width: 30px;
+  height: 30px;
+  margin-right: 2px;
+  cursor: pointer;
+  user-select: none;
+  display: flex;
+}
+
+.starSelected {
+  color: gold;
+}
