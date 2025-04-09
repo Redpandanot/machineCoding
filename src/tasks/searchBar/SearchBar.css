@@ -1,0 +1,33 @@
+.search-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 200px;
+}
+
+.text-area {
+  width: 500px;
+  padding: 5px;
+  margin: auto;
+  border: 1px solid black;
+}
+
+.results-container {
+  display: flex;
+  flex-direction: column;
+  width: 500px;
+  margin: auto;
+  border: 1px solid black;
+  max-height: 300px;
+  overflow-y: scroll;
+}
+
+.results {
+  padding: 3px;
+}
+
+.results:hover {
+  cursor: pointer;
+  background-color: bisque;
+}
