@@ -6,10 +6,12 @@ function SearchBar() {
   const [results, setResults] = useState([]);
   const [display, setDisplay] = useState(false);
   const [cache, setCache] = useState({});
+  const [loading, setLoading] = useState(false);
 
   async function fetchData(input) {
     if (cache[input]) {
       setResults(cache[input]);
+      setLoading(false);
       return;
     }
     const results = await fetch(
@@ -18,10 +20,12 @@ function SearchBar() {
     const data = await results?.json();
     setResults(data?.recipes);
     setCache((prev) => ({ ...prev, [input]: data?.recipes }));
+    setLoading(false);
   }
 
   useEffect(() => {
     const timer = setTimeout(() => {
+      setLoading(true);
       fetchData(input);
     }, 300);
 
@@ -32,7 +36,7 @@ function SearchBar() {
 
   return (
     <div className="search-container">
-      <h1>AutoComplete Search Bar</h1>
+      <h1 className="heading">AutoComplete Search Bar</h1>
       <input
         className="text-area"
         type="text"
@@ -43,13 +47,17 @@ function SearchBar() {
       />
       {display && input !== "" && (
         <div className="results-container">
-          {results.map((item) => {
-            return (
-              <span className="results" key={item.id}>
-                {item.name}
-              </span>
-            );
-          })}
+          {loading ? (
+            <span className="loading"></span>
+          ) : (
+            results.map((item) => {
+              return (
+                <span className="results" key={item.id}>
+                  {item.name}
+                </span>
+              );
+            })
+          )}
         </div>
       )}
     </div>

@@ -1,19 +1,41 @@
-.container {
-  height: 500px;
+.star-container {
+  height: 100vh;
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
 }
 
+.container {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+}
+
 .star {
-  width: 30px;
-  height: 30px;
-  margin-right: 2px;
+  font-size: 40px;
+  color: #ccc;
+  transition: transform 0.2s ease, color 0.3s ease;
   cursor: pointer;
   user-select: none;
-  display: flex;
+}
+
+.star:hover {
+  transform: scale(1.2);
+  color: #ffd700;
 }
 
 .starSelected {
-  color: gold;
+  color: #ffc107;
+}
+
+.input-box {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 30px;
+  margin-bottom: 100px;
+  padding: 2px;
 }
