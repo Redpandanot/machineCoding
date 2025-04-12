@@ -6,6 +6,7 @@ import StarRating from "./tasks/starRating/StarRating";
 import Carousel from "./tasks/carousel/Carousel";
 import imageUrls from "./tasks/carousel/imageUrls";
 import { Link, Routes, Route } from "react-router-dom";
+import ToDoList from "./tasks/toDoList/ToDoList";
 
 function App() {
   return (
@@ -23,6 +24,9 @@ function App() {
         <Link to="/carousel">
           <button>Carousel</button>
         </Link>
+        <Link to="/todolist">
+          <button>ToDoList</button>
+        </Link>
       </div>
       <div className="main-bar">
         <Routes>
@@ -34,6 +38,7 @@ function App() {
             element={<Accordion data={accordionData} />}
           />
           <Route path="/carousel" element={<Carousel images={imageUrls} />} />
+          <Route path="/todolist" element={<ToDoList />} />
         </Routes>
       </div>
     </div>
