@@ -79,3 +79,8 @@
 .view-note button.status:hover {
   background-color: #36f478;
 }
+
+.view-note.completed {
+  text-decoration: line-through;
+  opacity: 0.7;
+}
