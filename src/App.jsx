@@ -7,6 +7,7 @@ import Carousel from "./tasks/carousel/Carousel";
 import imageUrls from "./tasks/carousel/imageUrls";
 import { Link, Routes, Route } from "react-router-dom";
 import ToDoList from "./tasks/toDoList/ToDoList";
+import Pagination from "./tasks/pagination/Pagination";
 
 function App() {
   return (
@@ -27,6 +28,9 @@ function App() {
         <Link to="/todolist">
           <button>ToDoList</button>
         </Link>
+        <Link to="/pagination">
+          <button>Pagination</button>
+        </Link>
       </div>
       <div className="main-bar">
         <Routes>
@@ -39,6 +43,7 @@ function App() {
           />
           <Route path="/carousel" element={<Carousel images={imageUrls} />} />
           <Route path="/todolist" element={<ToDoList />} />
+          <Route path="/pagination" element={<Pagination />} />
         </Routes>
       </div>
     </div>

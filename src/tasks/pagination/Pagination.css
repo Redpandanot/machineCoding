@@ -1,0 +1,8 @@
+.products-container {
+  display: flex;
+  flex-direction: column;
+}
+
+.active {
+  background-color: gold;
+}
